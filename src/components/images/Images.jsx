@@ -4,7 +4,7 @@ import './images.scss';
 
 const Images = props => {
   const { images } = props;
-  console.log(props);
+  
   return (
     <div className="mt-5">
       <h3>Copyright FREE Images</h3>

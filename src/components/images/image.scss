@@ -1,0 +1,22 @@
+.item {
+  display: inline-block;
+  width: 100%;
+
+  img {
+    max-width: 100%;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (min-width: 240px) {
+  .item {
+    display: flex;
+    justify-content: center;
+  }
+}
