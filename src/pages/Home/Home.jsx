@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Images from '../../components/images/Images';
 import Search from '../../components/searchBar/Search';
 import './home.scss';
 
@@ -7,6 +8,7 @@ const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [search, setSearch] = useState('');
   const [keyword, setKeyword] = useState('');
+  const [images, setImages] = useState([]);
 
   const handleChange = event => {
     setSearch(event.target.value);
@@ -18,7 +20,7 @@ const Home = () => {
 
   // fatching data from pexels api
   useEffect(() => {
-    fetch('https://api.pexels.com/v1/search?query=nature/', {
+    fetch('https://api.pexels.com/v1/search?query=city', {
       headers: {
         Authorization:
           '563492ad6f9170000100000118208a20cbba44759f4b4e22ebf8e687',
@@ -28,7 +30,7 @@ const Home = () => {
       .then(
         data => {
           setIsLoaded(true);
-          console.log(data);
+          setImages(data.photos);
         },
         error => {
           setIsLoaded(true);
@@ -37,16 +39,23 @@ const Home = () => {
       );
   }, []);
 
-  return (
-    <div className="container pb-5">
-      <Search
-        handleChange={handleChange}
-        handleKeyword={handleKeyword}
-        search={search}
-        keyword={keyword}
-      />
-    </div>
-  );
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Please wait. Data is loading...</div>;
+  } else {
+    return (
+      <div className="container pb-5">
+        <Search
+          handleChange={handleChange}
+          handleKeyword={handleKeyword}
+          search={search}
+          keyword={keyword}
+        />
+        <Images images={images} />
+      </div>
+    );
+  }
 };
 
 export default Home;
