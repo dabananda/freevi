@@ -1,8 +1,9 @@
 import React from 'react';
-import './pagination.scss'
+import './pagination.scss';
 
 const Pagination = props => {
   const { handlePageIncrese, handlePageDecrese } = props;
+
   return (
     <div className="mb-4 mt-5 pn">
       <nav aria-label="Page navigation example">

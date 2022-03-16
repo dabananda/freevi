@@ -3,11 +3,11 @@ import Image from './Image';
 import './images.scss';          
 
 const Images = props => {
-  const { images } = props;
+  const { images, keyword } = props;
   
   return (
     <div className="mt-5">
-      <h3>Copyright FREE Images</h3>
+      <h3>Showing images of {keyword}</h3>
       <div className="mt-3 images">
         {images.map(image => (
           <Image key={image.id} image={image} />

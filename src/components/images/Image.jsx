@@ -5,7 +5,7 @@ const Image = props => {
   const { image } = props;
 
   return (
-    <div className="m-3 item">
+    <div className="mb-4 item">
       <a href={image.src.original} target="_blank">
         <img src={image.src.medium} alt={image.alt} />
       </a>

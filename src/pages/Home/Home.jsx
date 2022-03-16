@@ -22,6 +22,7 @@ const Home = () => {
 
   const handleKeyword = () => {
     setKeyword(search);
+    setSearch('');
   };
 
   const handlePageIncrese = () => {
@@ -95,7 +96,7 @@ const Home = () => {
           search={search}
           keyword={keyword}
         />
-        <Images images={images} />
+        <Images images={images} keyword={keyword} />
         {/* <Videos videos={videos} /> */}
         <Pagination
           handlePageIncrese={handlePageIncrese}
