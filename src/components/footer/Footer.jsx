@@ -3,7 +3,7 @@ import './footer.scss'
 
 const Footer = () => {
   return (
-    <div className="text-center pt-5">
+    <div className="text-center">
       <p className="text-muted m-0">
         Photos and videos provided by{' '}
         <a href="https://www.pexels.com/" target="_blank">

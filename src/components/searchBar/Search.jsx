@@ -7,7 +7,7 @@ const Search = props => {
       <input
         type="text"
         className="form-control searchBox"
-        placeholder="Search for copyright free images & videos..."
+        placeholder="Search for copyright free images..."
         value={props.search}
         onChange={event => props.handleChange(event)}
         onKeyPress={event => {
