@@ -34,6 +34,7 @@ const Home = () => {
         data => {
           setIsLoaded(true);
           setImages(data.photos);
+          console.log(data);
         },
         error => {
           setIsLoaded(true);

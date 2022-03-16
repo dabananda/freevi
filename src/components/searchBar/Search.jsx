@@ -1,5 +1,5 @@
 import React from 'react';
-import './search.scss'
+import './search.scss';
 
 const Search = props => {
   return (
@@ -10,6 +10,11 @@ const Search = props => {
         placeholder="Search for copyright free images & videos..."
         value={props.search}
         onChange={event => props.handleChange(event)}
+        onKeyPress={event => {
+          if (event.key === 'Enter') {
+            props.handleKeyword();
+          }
+        }}
       />
       <button className="btn btn-primary" onClick={() => props.handleKeyword()}>
         Search
