@@ -4,6 +4,7 @@ import Images from '../../components/images/Images';
 import Search from '../../components/searchBar/Search';
 import Videos from '../../components/videos/Videos';
 import './home.scss';
+import ReactLoading from 'react-loading';
 
 const Home = () => {
   const [error, setError] = useState(null);
@@ -67,7 +68,11 @@ const Home = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Please wait. Data is loading...</div>;
+    return (
+      <div className='loading'>
+        <ReactLoading type="bubbles" color="#0000FF" height={100} width={50} />
+      </div>
+    );
   } else {
     return (
       <div className="container">
